@@ -26,7 +26,6 @@ export default {
 <style scoped>
 .login {
   display: flex;
-  flex-direction: row;
   min-height: 100vh;
   height: 100%;
 }
@@ -38,8 +37,8 @@ export default {
   padding: 0 48px;
 }
 .img-container {
-  max-width: 385px;
-  max-height: 167px;
+  width: 385px;
+  height: 167px;
 }
 .img-container img {
   width: 100%;
