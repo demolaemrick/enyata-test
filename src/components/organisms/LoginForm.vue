@@ -20,7 +20,7 @@
           name="password"
           placeholder="***************"
         />
-        <Label for="password">Email address</Label>
+        <Label for="password">Password</Label>
       </div>
       <div class="submit-btn">
         <Button />

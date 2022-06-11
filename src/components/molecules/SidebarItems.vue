@@ -18,26 +18,28 @@
     </SidebarItem>
     <SidebarItem title="Starships" path="/starships">
       <template #icon>
-        <div class="square"></div>
+        <SidebarItemIcon />
       </template>
     </SidebarItem>
     <SidebarItem title="People" path="/people">
       <template #icon>
-        <div class="square"></div>
+        <SidebarItemIcon iconColor="#FFA9EC" />
       </template>
     </SidebarItem>
     <SidebarItem title="Species" path="/species">
       <template #icon>
-        <div class="square"></div>
+        <SidebarItemIcon iconColor="#FDFFA9" />
       </template>
     </SidebarItem>
   </ul>
 </template>
 <script>
 import SidebarItem from "@/components/atoms/SidebarItem";
+import SidebarItemIcon from "@/components/atoms/SidebarItemIcon";
 export default {
   components: {
     SidebarItem,
+    SidebarItemIcon
   },
 };
 </script>
@@ -46,7 +48,6 @@ export default {
   padding: 0;
   width: 80%;
 }
-
 
 .sidebar__items .square {
   background: #a9c1ff;

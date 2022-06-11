@@ -10,7 +10,6 @@ const routes = [
   {
     path: "/overview",
     name: "overview",
-
     components: {
       Navbar: () => import("@/components/organisms/Navbar.vue"),
       default: () => import("../views/OverView.vue"),
@@ -18,11 +17,20 @@ const routes = [
     },
   },
   {
+    path: "/overview/:id",
+    name: "movie",
+    components: {
+      Navbar: () => import("@/components/organisms/Navbar.vue"),
+      default: () => import("@/components/organisms/Movie.vue"),
+      Sidebar: () => import("@/components/organisms/Sidebar.vue"),
+    },
+  },
+  {
     path: "/starships",
     name: "starships",
-
     components: {
-      default: () => import("../views/OverView.vue"),
+      Navbar: () => import("@/components/organisms/Navbar.vue"),
+      default: () => import("../views/StarshipsView.vue"),
       Sidebar: () => import("@/components/organisms/Sidebar.vue"),
     },
   },
@@ -31,16 +39,17 @@ const routes = [
     name: "people",
 
     components: {
-      default: () => import("../views/OverView.vue"),
+      Navbar: () => import("@/components/organisms/Navbar.vue"),
+      default: () => import("../views/PeopleView.vue"),
       Sidebar: () => import("@/components/organisms/Sidebar.vue"),
     },
   },
   {
     path: "/species",
     name: "species",
-
     components: {
-      default: () => import("../views/OverView.vue"),
+      Navbar: () => import("@/components/organisms/Navbar.vue"),
+      default: () => import("../views/SpeciesView.vue"),
       Sidebar: () => import("@/components/organisms/Sidebar.vue"),
     },
   },

@@ -1,6 +1,20 @@
 <template>
   <nav class="navbar">
-    <div>Icon</div>
+    <div class="navbar__col-1">
+      <svg
+        width="9"
+        height="15"
+        viewBox="0 0 9 15"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.28572 -0.00111404L6.36937e-07 7.2846L7.28571 14.5703L9 12.856L3.42857 7.2846L9 1.71317L7.28572 -0.00111404Z"
+          fill="#A4A7B7"
+        />
+      </svg>
+      <span>Back</span>
+    </div>
     <div class="navbar__col-2">
       <svg
         class="notification-icon"
@@ -74,34 +88,43 @@
 export default {};
 </script>
 <style>
-.navbar {
+.navbar,
+.navbar__col-1,
+.navbar__col-2,
+.navbar__profile {
   display: flex;
   align-items: center;
+}
+
+.navbar {
   justify-content: space-between;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 2px 6px rgba(229, 229, 229, 0.3);
   width: 100%;
   height: 4rem;
   margin-bottom: 2.75rem;
   padding: 0 2.125rem;
+  position: sticky;
+  top: 0;
+}
+
+.navbar__col-1 {
+  gap: 8px;
+  color: #a4a7b7;
 }
 .navbar__col-2 {
-  display: flex;
-  align-items: center;
   gap: 32px;
 }
 .navbar__col-2 hr {
   width: 25px;
   transform: rotate(90deg);
-  border-color: #E5E5E5;
+  border-color: #e5e5e5;
 }
 .navbar__profile {
-  display: flex;
-  align-items: center;
   gap: 24px;
   margin-right: 27px;
 }
 .navbar__profile span {
-    color: #303B54;
+  color: #303b54;
 }
 </style>

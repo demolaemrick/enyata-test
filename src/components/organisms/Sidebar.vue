@@ -23,6 +23,8 @@ export default {
   height: 100vh;
   width: 272px;
   padding: 32px 0;
+  position: sticky;
+  top: 0;
 }
 
 .logo-container {
