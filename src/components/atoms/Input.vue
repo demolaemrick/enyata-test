@@ -3,14 +3,14 @@
     class="input"
     :type="type"
     :id="id"
-    :name="email"
     :placeholder="placeholder"
+    @input="$emit('update:modelValue', $event.target.value)"
     autocomplete="off"
   />
 </template>
 <script>
 export default {
-  props: ["type", "placeholder", "id", "name"],
+  props: ["type", "placeholder", "id", "modelValue", "invalid"],
 };
 </script>
 <style>

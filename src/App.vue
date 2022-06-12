@@ -14,5 +14,6 @@
 }
 .main {
   width: 100%;
+  overflow: hidden;
 }
 </style>

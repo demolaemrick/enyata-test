@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="button">Log in</button>
+  <button v-bind="$attrs" class="button">Log in</button>
 </template>
 <script>
 export default {};
@@ -16,5 +16,8 @@ export default {};
   font-weight: 500;
   width: 100%;
   padding: 12px 0;
+}
+.button:disabled {
+  cursor:not-allowed;
 }
 </style>
