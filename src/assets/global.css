@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
@@ -6,19 +6,11 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  /* height: 100%; */
-
+  font-family: "Inter", sans-serif;
 }
-.flex {
-  display: flex;
-  flex-direction: row;
+.overview,
+.starships,
+.people,
+.species {
+  padding: 0 38px 46px;
 }
-
-.items-center {
-  align-items: center;
-}
-.justify-center {
-  justify-content: center;
-}
-
