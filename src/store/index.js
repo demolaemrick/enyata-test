@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
 import { formatDate } from "@/shared/utility";
+import dayjs from "dayjs";
 
 const BASE_URL = "https://swapi.dev/api";
 
@@ -69,6 +70,13 @@ export default createStore({
           created: formatDate(specie.created),
         };
       });
+    },
+    getFilm: (state) => {
+      let { release_date, ...updatedFilmState } = state.film;
+      return {
+        ...updatedFilmState,
+        release_date: dayjs(release_date).format('MMMM DD, YYYY'),
+      };
     },
   },
   mutations: {
