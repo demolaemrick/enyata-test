@@ -2,7 +2,7 @@
   <div class="layout">
     <RouterView name="Sidebar"></RouterView>
     <div class="main">
-      <RouterView name="Navbar"></RouterView>
+      <RouterView name="Navbar" :key="$route.fullPath"></RouterView>
       <RouterView></RouterView>
     </div>
   </div>
