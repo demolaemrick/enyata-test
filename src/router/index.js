@@ -21,7 +21,7 @@ const routes = [
     name: "movie",
     components: {
       Navbar: () => import("@/components/organisms/Navbar.vue"),
-      default: () => import("@/components/organisms/Movie.vue"),
+      default: () => import("@/components/organisms/Film.vue"),
       Sidebar: () => import("@/components/organisms/Sidebar.vue"),
     },
   },
@@ -31,6 +31,15 @@ const routes = [
     components: {
       Navbar: () => import("@/components/organisms/Navbar.vue"),
       default: () => import("../views/StarshipsView.vue"),
+      Sidebar: () => import("@/components/organisms/Sidebar.vue"),
+    },
+  },
+  {
+    path: "/starships/:id",
+    name: "starship",
+    components: {
+      Navbar: () => import("@/components/organisms/Navbar.vue"),
+      default: () => import("@/components/organisms/Starship.vue"),
       Sidebar: () => import("@/components/organisms/Sidebar.vue"),
     },
   },
@@ -45,11 +54,29 @@ const routes = [
     },
   },
   {
+    path: "/people/:id",
+    name: "person",
+    components: {
+      Navbar: () => import("@/components/organisms/Navbar.vue"),
+      default: () => import("@/components/organisms/Person.vue"),
+      Sidebar: () => import("@/components/organisms/Sidebar.vue"),
+    },
+  },
+  {
     path: "/species",
     name: "species",
     components: {
       Navbar: () => import("@/components/organisms/Navbar.vue"),
       default: () => import("../views/SpeciesView.vue"),
+      Sidebar: () => import("@/components/organisms/Sidebar.vue"),
+    },
+  },
+  {
+    path: "/species/:id",
+    name: "specie",
+    components: {
+      Navbar: () => import("@/components/organisms/Navbar.vue"),
+      default: () => import("@/components/organisms/Specie.vue"),
       Sidebar: () => import("@/components/organisms/Sidebar.vue"),
     },
   },
