@@ -96,6 +96,9 @@ export default createStore({
     fetchSpecie: (state, specie) => {
       state.specie = specie;
     },
+    setStarshipToNull: (state) => {
+      state.ship = null;
+    },
   },
   actions: {
     fetchFilms: async ({ commit }) => {
@@ -151,7 +154,10 @@ export default createStore({
     fetchStarship: async ({ commit }, shipId) => {
       try {
         const response = await fetch(`${BASE_URL}/starships/${shipId}`);
-        if (!response.ok) throw new Error("Something went wrong");
+        if (!response.ok) {
+          commit("setStarshipToNull");
+          return;
+        }
         const data = await response.json();
         commit("fetchStarship", data);
       } catch (error) {
