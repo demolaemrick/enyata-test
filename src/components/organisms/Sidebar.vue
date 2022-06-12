@@ -21,10 +21,11 @@ export default {
   gap: 30px;
   background: #031434;
   height: 100vh;
-  width: 272px;
+  min-width: 272px;
   padding: 32px 0;
   position: sticky;
   top: 0;
+  bottom: 0;
 }
 
 .logo-container {

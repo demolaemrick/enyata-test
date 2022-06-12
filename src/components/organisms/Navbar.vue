@@ -1,19 +1,21 @@
 <template>
   <nav class="navbar">
-    <div class="navbar__col-1">
-      <svg
-        width="9"
-        height="15"
-        viewBox="0 0 9 15"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M7.28572 -0.00111404L6.36937e-07 7.2846L7.28571 14.5703L9 12.856L3.42857 7.2846L9 1.71317L7.28572 -0.00111404Z"
-          fill="#A4A7B7"
-        />
-      </svg>
-      <span>Back</span>
+    <div class="navbar__col-1" @click="goBack">
+      <template v-if="showBackButton">
+        <svg
+          width="9"
+          height="15"
+          viewBox="0 0 9 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.28572 -0.00111404L6.36937e-07 7.2846L7.28571 14.5703L9 12.856L3.42857 7.2846L9 1.71317L7.28572 -0.00111404Z"
+            fill="#A4A7B7"
+          />
+        </svg>
+        <span>Back</span>
+      </template>
     </div>
     <div class="navbar__col-2">
       <svg
@@ -69,7 +71,7 @@
         </svg>
         <span>John Doe</span>
       </div>
-      <!-- three dots -->
+      <!-- dots icon -->
       <svg
         width="17"
         height="3"
@@ -85,7 +87,19 @@
   </nav>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      showBackButton: !!this.$route.params.id,
+    };
+  },
+  methods: {
+    goBack() {
+      this.$router.back();
+      this.showBackButton = false;
+    },
+  },
+};
 </script>
 <style>
 .navbar,
@@ -97,20 +111,26 @@ export default {};
 }
 
 .navbar {
-  justify-content: space-between;
-  background: #ffffff;
-  box-shadow: 0px 2px 6px rgba(229, 229, 229, 0.3);
-  width: 100%;
-  height: 4rem;
-  margin-bottom: 2.75rem;
-  padding: 0 2.125rem;
   position: sticky;
   top: 0;
+  right: 0;
+
+  overflow: hidden;
+  background: #ffffff;
+  width: 100%;
+  height: 4rem;
+  justify-content: space-between;
+
+  box-shadow: 0px 2px 6px rgba(229, 229, 229, 0.3);
+  margin-bottom: 2.75rem;
+  padding: 0 2.125rem;
 }
 
 .navbar__col-1 {
   gap: 8px;
   color: #a4a7b7;
+  cursor: pointer;
+  user-select: none;
 }
 .navbar__col-2 {
   gap: 32px;

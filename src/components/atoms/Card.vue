@@ -2,17 +2,17 @@
   <div class="card">
     <div class="card__content">
       <div class="card__content__info">
-        <span>{{title}}</span>
+        <span>{{ title }}</span>
         <span>200</span>
         <p>20 More than than yesterday</p>
       </div>
-      <div class="card__icon" :style="{background: iconColor}"></div>
+      <div class="card__icon" :style="{ background: iconColor }"></div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  props: ["title", "iconColor"]
+  props: ["title", "iconColor"],
 };
 </script>
 <style>
@@ -20,7 +20,6 @@ export default {
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  min-width: 208px;
   padding: 24px 15px 17px;
 }
 .card__content {

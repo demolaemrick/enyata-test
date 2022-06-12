@@ -1,13 +1,18 @@
 <template>
-    <div class="overview">
-      <div class="overview__stats">
-        <Card title="Films" iconColor="#A9FFE0" />
-        <Card title="Starship" />
-        <Card title="People" iconColor="#FFA9EC" />
-        <Card title="Species" iconColor="#FDFFA9" />
-      </div>
-      <Table :headers="headers" :data="tableData" page="overview" />
+  <div class="overview">
+    <div class="overview__stats">
+      <Card title="Films" iconColor="#A9FFE0" />
+      <Card title="Starship" />
+      <Card title="People" iconColor="#FFA9EC" />
+      <Card title="Species" iconColor="#FDFFA9" />
     </div>
+    <Table
+      :headers="headers"
+      :data="$store.getters.getFilms"
+      page="overview"
+      caption="Films"
+    />
+  </div>
 </template>
 <script>
 import Card from "@/components/atoms/Card";
@@ -24,39 +29,21 @@ export default {
         { key: "episodeId", name: "Episode ID", width: "12%" },
         { key: "character", name: "Character", width: "12%" },
       ],
-      tableData: [
-        {
-          title: "MoonLight",
-          releaseDate: "9/18/20",
-          director: "Esther Howard",
-          producer: "Paracetamol",
-          episodeId: "4",
-          character: "https://swapi.dev/api/people",
-        },
-        {
-          title: "MoonLight",
-          releaseDate: "9/18/20",
-          director: "Esther Howard",
-          producer: "Paracetamol",
-          episodeId: "4",
-          character: "https://swapi.dev/api/people",
-        },
-      ],
     };
+  },
+  created() {
+    this.$store.dispatch("fetchFilms");
   },
 };
 </script>
 
-<style scoped>
-.overview {
-  padding: 0 40px 46px;
-}
+<style>
 .overview__stats {
   display: flex;
-  flex: 1 0 calc (25% -10px);
   gap: 3.4rem;
   margin-bottom: 4.5rem;
-
-  /* background-color: red; */
+}
+.overview__stats .card {
+  flex: 1 0 208px;
 }
 </style>

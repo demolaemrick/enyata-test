@@ -1,19 +1,13 @@
 <template>
   <div class="movie">
     <div class="movie__image-container">
-      <img src="../../assets/sample.png" alt="star war movie" />
+      <slot name="image"></slot>
     </div>
     <div class="movie__info">
-      <h1>Cover</h1>
-      <p>Director: Kingsley Omin</p>
-      <p>Producer: Kingsley Omin</p>
-      <p>Release Date: January 24, 2022.</p>
+      <slot name="content"></slot>
     </div>
   </div>
 </template>
-<script>
-export default {};
-</script>
 <style>
 .movie {
   display: flex;
@@ -24,8 +18,7 @@ export default {};
   width: 318px;
   height: 450px;
 }
-.movie__info {
-}
+
 .movie__info h1 {
   color: #000000;
   font-weight: 700;
@@ -33,8 +26,9 @@ export default {};
   margin-bottom: 1.75rem;
 }
 .movie__info p {
-  color: #303B54;
+  color: #303b54;
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
+  text-transform: capitalize;
 }
 </style>
