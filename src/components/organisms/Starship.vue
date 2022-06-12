@@ -1,7 +1,7 @@
 <template>
   <Movie>
     <template #image>
-      <img src="../../assets/cover.png" alt="star war movie" />
+      <img src="../../assets/death-star.png" alt="star war movie" />
     </template>
     <template v-if="$store.state.ship" #content>
       <h1>{{ $store.state.ship.name }}</h1>
