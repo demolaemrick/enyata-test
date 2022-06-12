@@ -1,5 +1,9 @@
 <template>
-  <router-link class="sidebar__item" :to="path">
+  <router-link
+    class="sidebar__item"
+    :class="{ active: isActive }"
+    :to="path"
+  >
     <slot name="icon"></slot>
     <span>{{ title }}</span>
   </router-link>
@@ -7,6 +11,11 @@
 <script>
 export default {
   props: ["title", "path"],
+  data() {
+    return {
+      isActive: `/${this.$route.path.split("/")[1]}` === this.path,
+    };
+  },
 };
 </script>
 <style>
@@ -25,7 +34,8 @@ export default {
   margin-bottom: 4.375rem;
 }
 
-.sidebar__item.router-link-active {
+.sidebar__item.router-link-active, .active {
   background: #0a74dc;
 }
+
 </style>
