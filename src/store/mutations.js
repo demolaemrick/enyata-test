@@ -26,4 +26,10 @@ export default {
   setStarshipToNull: (state) => {
     state.ship = null;
   },
+  toggleSideMenu: (state) => {
+    state.showSideMenu = !state.showSideMenu;
+  },
+  hideSideMenu: (state) => {
+    state.showSideMenu = false;
+  },
 };

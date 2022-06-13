@@ -5,15 +5,17 @@
     </div>
     <SidebarItems />
   </div>
+  <ResponsiveSidebar />
 </template>
 <script>
 import SidebarItems from "@/components/molecules/SidebarItems";
+import ResponsiveSidebar from "@/components/organisms/ResponsiveSidebar";
 
 export default {
-  components: { SidebarItems },
+  components: { SidebarItems, ResponsiveSidebar },
 };
 </script>
-<style>
+<style scoped>
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -27,6 +29,7 @@ export default {
   position: sticky;
   top: 0;
   bottom: 0;
+  transition: transform 0.3s ease-out;
 }
 
 .logo-container {
@@ -36,5 +39,11 @@ export default {
 .logo-container img {
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    display: none;
+  }
 }
 </style>

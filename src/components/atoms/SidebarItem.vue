@@ -1,6 +1,7 @@
 <template>
   <router-link
     class="sidebar__item"
+    @click="$store.commit('hideSideMenu')"
     :class="{ active: isActive }"
     :to="path"
   >
@@ -15,6 +16,13 @@ export default {
     return {
       isActive: `/${this.$route.path.split("/")[1]}` === this.path,
     };
+  },
+  created() {
+    if (this.$route.params.id === undefined) {
+      this.isActive = false;
+    }
+
+    console.log(this.$route.params.id);
   },
 };
 </script>
@@ -34,8 +42,8 @@ export default {
   margin-bottom: 4.375rem;
 }
 
-.sidebar__item.router-link-active, .active {
+.sidebar__item.router-link-active,
+.active {
   background: #0a74dc;
 }
-
 </style>

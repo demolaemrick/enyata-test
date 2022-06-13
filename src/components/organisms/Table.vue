@@ -1,39 +1,44 @@
 <template>
-  <div class="table-container">
-    <table>
-      <caption class="table-caption">
-        {{
-          caption
-        }}
-      </caption>
-      <thead>
-        <tr>
-          <th style="width: 2%">
-            <input type="checkbox" />
-          </th>
-          <th v-for="(header, i) in headers" :key="i">{{ header.name }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(item, i) in data" :key="i">
-          <td>
-            <input type="checkbox" />
-          </td>
-          <td
-            v-for="(header, i) in headers"
-            :key="i"
-            @click="navigate(item.id)"
-            :data-label="header.name"
-          >
-            {{ item[header.key] }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table>
+    <caption class="table-caption">
+      {{
+        caption
+      }}
+    </caption>
+    <thead>
+      <tr>
+        <th style="width: 2%">
+          <input type="checkbox" />
+        </th>
+        <th v-for="(header, i) in headers" :key="i">{{ header.name }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(item, i) in data" :key="i">
+        <td>
+          <input type="checkbox" />
+        </td>
+        <td
+          v-for="(header, i) in headers"
+          :key="i"
+          @click="navigate(item.id)"
+          :data-label="header.name"
+        >
+          {{ item[header.key] }}
+        </td>
+        <td class="action-btn">
+          <Button type="button">Select</Button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 <script>
+import Button from "@/components/atoms/Button";
 export default {
+  components: {
+    Button,
+  },
   props: ["headers", "data", "caption", "routeName"],
   methods: {
     navigate(id) {
@@ -43,9 +48,6 @@ export default {
 };
 </script>
 <style scoped>
-.table-container {
-  /* overflow-x: auto; */
-}
 .table-caption {
   color: #a4a7b7;
   font-size: 1rem;
@@ -89,15 +91,15 @@ td {
   text-align: center;
   font-weight: 500;
 }
-td:not(:last-of-type) {
+td:not(:nth-child(7)) {
   text-transform: capitalize;
 }
 
-@media screen and (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
+.action-btn {
+  display: none;
+}
 
+@media screen and (max-width: 992px) {
   table {
     border: none;
   }
@@ -110,14 +112,16 @@ td:not(:last-of-type) {
   tr,
   td {
     display: block;
-    /* might delete later */
-    width: 100%;
   }
   table tr {
     margin-bottom: 15px;
     box-shadow: none;
-    /* background: red; */
     border: 1px solid rgba(164, 167, 183, 0.4);
+  }
+  table tr:hover {
+    background: transparent;
+      box-shadow: 0px 0px 30px rgba(13, 47, 161, 0.07);
+
   }
   table tbody tr td {
     text-align: right;
@@ -125,7 +129,7 @@ td:not(:last-of-type) {
     position: relative;
   }
 
-  table tr td:first-of-type{
+  table tr td:first-of-type {
     display: none;
   }
 
@@ -140,6 +144,10 @@ td:not(:last-of-type) {
 
   table td:last-child {
     border-bottom: 0;
+  }
+
+  .action-btn {
+    display: block;
   }
 }
 </style>

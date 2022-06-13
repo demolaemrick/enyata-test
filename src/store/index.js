@@ -5,6 +5,7 @@ import getters from "./getters"
 
 export default createStore({
   state: {
+    showSideMenu: false,
     films: [],
     starships: [],
     species: [],

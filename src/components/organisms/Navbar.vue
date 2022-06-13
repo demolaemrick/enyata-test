@@ -1,5 +1,8 @@
 <template>
   <nav class="navbar">
+    <div class="hamburger">
+      <Hamburger />
+    </div>
     <div class="navbar__col-1" @click="goBack">
       <template v-if="showBackButton">
         <svg
@@ -85,18 +88,26 @@
       </svg>
     </div>
   </nav>
+  <div></div>
 </template>
 <script>
+import Hamburger from "@/components/atoms/Hamburger";
 export default {
+  components: { Hamburger },
   data() {
     return {
       showBackButton: !!this.$route.params.id,
+      change: false,
     };
   },
   methods: {
     goBack() {
       this.$router.back();
     },
+  },
+
+  created() {
+    console.log();
   },
 };
 </script>
@@ -143,5 +154,17 @@ export default {
 }
 .navbar__profile span {
   color: #303b54;
+}
+
+@media (max-width: 992px) {
+  .navbar__col-1,
+  .navbar__col-2 {
+    display: none;
+  }
+}
+@media (min-width: 993px) {
+  .navbar .hamburger {
+    display: none;
+  }
 }
 </style>

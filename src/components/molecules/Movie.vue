@@ -11,12 +11,16 @@
 <style>
 .movie {
   display: flex;
+  flex-wrap: wrap;
   gap: 28px;
   padding: 0 28px;
 }
 .movie__image-container {
   width: 318px;
   height: 450px;
+}
+.movie__image-container img {
+  width: 100%;
 }
 
 .movie__info h1 {
@@ -30,5 +34,12 @@
   font-weight: 500;
   margin-bottom: 7px;
   text-transform: capitalize;
+}
+
+@media (max-width: 689px) {
+  .movie__image-container{
+    width: 100%;
+    height: auto;
+  }
 }
 </style>

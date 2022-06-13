@@ -1,8 +1,8 @@
 <template>
   <div class="layout">
-    <RouterView name="Sidebar" :key="$route.params"></RouterView>
+    <RouterView name="Sidebar" :key="$route.params.id"></RouterView>
     <div class="main">
-      <RouterView name="Navbar" :key="$route.params"></RouterView>
+      <RouterView name="Navbar" :key="$route.params.id"></RouterView>
       <RouterView></RouterView>
     </div>
   </div>
@@ -14,6 +14,6 @@
 }
 .main {
   width: 100%;
-  /* overflow: hidden; */
 }
+
 </style>
