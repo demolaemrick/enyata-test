@@ -14,8 +14,6 @@ const validatePassword = (value) => {
   let difference = 8 - value.length;
   const regEx = /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/;
 
-  console.log(reg.test(value));
-
   if (!value) {
     return "Password is required";
   }
