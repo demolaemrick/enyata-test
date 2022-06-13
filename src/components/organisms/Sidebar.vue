@@ -22,6 +22,7 @@ export default {
   background: #031434;
   height: 100vh;
   width: 272px;
+  min-width: 272px;
   padding: 32px 0;
   position: sticky;
   top: 0;
