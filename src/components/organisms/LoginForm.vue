@@ -25,7 +25,7 @@
         <Label for="password">Password</Label>
       </div>
       <div class="submit-btn">
-        <Button type="submit" :disabled="!isValid">Log in</Button>  
+        <Button type="submit" :disabled="!isValid">Log in</Button>
       </div>
       <p>Forgot your password?</p>
     </form>
@@ -81,7 +81,7 @@ export default {
 
   methods: {
     handleSubmit(e) {
-      e.preventDefault();      
+      e.preventDefault();
       this.$router.push("/overview");
     },
   },
@@ -89,7 +89,6 @@ export default {
 </script>
 <style>
 .login-form-container {
-  position: relative;
   background: #ffffff;
   border: 1px solid rgba(164, 167, 183, 0.3);
   border-radius: 8px;

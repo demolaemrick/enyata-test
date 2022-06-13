@@ -33,9 +33,11 @@ export default {
   align-items: center;
   justify-content: center;
 }
+.form-container {
+  width: 70%;
+}
 .login {
-  min-height: 100vh;
-  height: 100%;
+  height: 100vh;
 }
 .aside {
   background: #031434;
@@ -43,20 +45,18 @@ export default {
   width: 30%;
 }
 .img-container {
-  /* min-width: 385px; */
   width: 24rem;
   height: 10.4rem;
 }
 .img-container img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 .form-container {
-  /* width: 100%; */
   width: 70%;
 }
 
-/* sm -> 576px, m 768px, xm 992px and 1200px */
 @media (max-width: 924px) {
   .login {
     flex-direction: column;

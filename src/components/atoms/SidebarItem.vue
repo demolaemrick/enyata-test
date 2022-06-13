@@ -21,8 +21,6 @@ export default {
     if (this.$route.params.id === undefined) {
       this.isActive = false;
     }
-
-    console.log(this.$route.params.id);
   },
 };
 </script>
