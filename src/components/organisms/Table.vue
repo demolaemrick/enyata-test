@@ -73,12 +73,15 @@ th {
 th,
 td {
   padding: 30px;
-  text-transform: capitalize;
 }
 td {
   color: #303b54;
   line-height: 24px;
   text-align: center;
   font-weight: 500;
+
+}
+td:not(:last-of-type){
+  text-transform: capitalize;
 }
 </style>
