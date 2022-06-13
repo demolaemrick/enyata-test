@@ -23,7 +23,7 @@ const validatePassword = (value) => {
     return "Must be atleast 8 characters! " + difference + " characters left";
   }
   if (!regEx.test(value)) {
-    return "Password should be alphanumeric";
+    return "Password should contain atleast one letter and one number.";
   }
 };
 
