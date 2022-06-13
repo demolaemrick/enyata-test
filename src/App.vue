@@ -14,6 +14,6 @@
 }
 .main {
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 </style>

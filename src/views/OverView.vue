@@ -40,6 +40,7 @@ export default {
 <style>
 .overview__stats {
   display: flex;
+  flex-wrap: wrap;
   gap: 3.4rem;
   margin-bottom: 4.5rem;
 }

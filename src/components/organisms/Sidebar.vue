@@ -30,8 +30,8 @@ export default {
 }
 
 .logo-container {
-  width: 107px;
-  height: 46px;
+  width: 6.7rem;
+  height: 2.875rem;
 }
 .logo-container img {
   width: 100%;

@@ -110,6 +110,9 @@ export default {
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   background: #ffffff;
   width: 100%;
   height: 4rem;
