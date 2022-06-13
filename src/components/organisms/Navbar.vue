@@ -114,7 +114,6 @@ export default {
   top: 0;
   right: 0;
 
-  overflow: hidden;
   background: #ffffff;
   width: 100%;
   height: 4rem;
