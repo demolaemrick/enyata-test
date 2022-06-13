@@ -9,7 +9,7 @@
     <Table
       :headers="headers"
       :data="$store.getters.getFilms"
-      page="overview"
+      routeName="movie"
       caption="Films"
     />
   </div>
@@ -22,12 +22,12 @@ export default {
   data() {
     return {
       headers: [
-        { key: "title", name: "Film Title", width: "26%" },
-        { key: "releaseDate", name: "Release Date", width: "12%" },
-        { key: "director", name: "Director", width: "12%" },
-        { key: "producer", name: "Producer", width: "12%" },
-        { key: "episodeId", name: "Episode ID", width: "12%" },
-        { key: "character", name: "Character", width: "12%" },
+        { key: "title", name: "Film Title"},
+        { key: "releaseDate", name: "Release Date"},
+        { key: "director", name: "Director"},
+        { key: "producer", name: "Producer"},
+        { key: "episodeId", name: "Episode ID"},
+        { key: "character", name: "Character"},
       ],
     };
   },

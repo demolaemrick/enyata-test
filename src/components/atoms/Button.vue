@@ -1,5 +1,7 @@
 <template>
-  <button v-bind="$attrs" class="button">Log in</button>
+  <button v-bind="$attrs" class="button">
+  <slot></slot>
+  </button>
 </template>
 <script>
 export default {};

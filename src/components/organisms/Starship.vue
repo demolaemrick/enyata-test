@@ -22,7 +22,7 @@
 import Movie from "@/components/molecules/Movie";
 export default {
   components: { Movie },
-  created() {
+  mounted() {
     this.$store.dispatch("fetchStarship", this.$route.params.id);
   },
 };

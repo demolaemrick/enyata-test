@@ -3,7 +3,7 @@
     <Table
       :headers="headers"
       :data="$store.getters.getSpecies"
-      page="species"
+      routeName="specie"
       caption="Species"
     />
   </div>
@@ -17,12 +17,12 @@ export default {
   data() {
     return {
       headers: [
-       { key: "name", name: "Name", width: "26%" },
-        { key: "classification", name: "Classification", width: "12%" },
-        { key: "eyeColors", name: "Eye Colors", width: "12%" },
-        { key: "hairColor", name: "Hair Color", width: "12%" },
-        { key: "height", name: "Height", width: "12%" },
-        { key: "created", name: "Character", width: "12%" },
+        { key: "name", name: "Name" },
+        { key: "classification", name: "Classification" },
+        { key: "eyeColors", name: "Eye Colors" },
+        { key: "hairColor", name: "Hair Color" },
+        { key: "height", name: "Height" },
+        { key: "created", name: "Character" },
       ],
     };
   },

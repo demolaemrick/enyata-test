@@ -12,7 +12,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import LoginForm from "@/components/organisms/LoginForm.vue";
 
 export default {
@@ -24,16 +23,22 @@ export default {
 </script>
 
 <style scoped>
-.login {
+.login,
+.aside,
+.form-container {
   display: flex;
+}
+.aside,
+.form-container {
+  align-items: center;
+  justify-content: center;
+}
+.login {
   min-height: 100vh;
   height: 100%;
 }
 .aside {
   background: #031434;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 0 48px;
 }
 .img-container {
@@ -45,9 +50,6 @@ export default {
   height: 100%;
 }
 .form-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
 }
 </style>

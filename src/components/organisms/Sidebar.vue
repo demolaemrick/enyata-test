@@ -21,7 +21,7 @@ export default {
   gap: 30px;
   background: #031434;
   height: 100vh;
-  min-width: 272px;
+  width: 272px;
   padding: 32px 0;
   position: sticky;
   top: 0;

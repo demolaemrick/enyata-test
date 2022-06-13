@@ -6,8 +6,8 @@
           caption
         }}
       </caption>
-
-      <tr>
+      <tbody>
+        <tr>
         <th style="width: 2%">
           <input type="checkbox" />
         </th>
@@ -21,15 +21,16 @@
           {{ item[header.key] }}
         </td>
       </tr>
+      </tbody>
     </table>
   </div>
 </template>
 <script>
 export default {
-  props: ["headers", "data", "page", "caption"],
+  props: ["headers", "data", "caption", "routeName"],
   methods: {
     navigate(id) {
-      this.$router.push(`/${this.page}/${id}`);
+      this.$router.push({ name: this.routeName, params: { id } });
     },
   },
 };
@@ -37,7 +38,6 @@ export default {
 <style scoped>
 .table-container {
   overflow-x: auto;
- 
 }
 .table-title {
   color: #a4a7b7;
@@ -52,13 +52,6 @@ table {
   border-radius: 4px;
   border-spacing: 0;
 }
-th {
-  font-weight: 500;
-  color: #a4a7b7;
-  font-size: 16px;
-  line-height: 24px;
-  white-space: nowrap;
-}
 tr {
   -webkit-box-shadow: 0px 1px 0px 0px rgba(229, 229, 229, 1);
   -moz-box-shadow: 0px 1px 0px 0px rgba(229, 229, 229, 1);
@@ -70,9 +63,17 @@ tr:hover:not(:first-of-type) {
   border-radius: 4px;
 }
 
+th {
+  font-weight: 500;
+  color: #a4a7b7;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+}
 th,
 td {
   padding: 30px;
+  text-transform: capitalize;
 }
 td {
   color: #303b54;

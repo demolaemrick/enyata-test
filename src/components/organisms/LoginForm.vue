@@ -25,10 +25,11 @@
         <Label for="password">Password</Label>
       </div>
       <div class="submit-btn">
-        <Button type="submit" :disabled="!isValid" />
+        <Button type="submit" :disabled="!isValid">Log in</Button>  
       </div>
       <p>Forgot your password?</p>
     </form>
+    <!-- validation error message -->
     <template v-if="error">
       <ErrorMessage>{{ errorMessages[0] }}</ErrorMessage>
     </template>
@@ -80,8 +81,7 @@ export default {
 
   methods: {
     handleSubmit(e) {
-      e.preventDefault();
-      alert("Welcome " + this.user.email);
+      e.preventDefault();      
       this.$router.push("/overview");
     },
   },

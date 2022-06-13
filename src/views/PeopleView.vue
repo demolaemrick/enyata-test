@@ -5,6 +5,7 @@
       :data="$store.getters.getPeople"
       page="people"
       caption="People"
+      routeName="person"
     />
   </div>
 </template>
@@ -17,12 +18,12 @@ export default {
   data() {
     return {
       headers: [
-        { key: "name", name: "Name", width: "26%" },
-        { key: "birthYear", name: "Birth Year", width: "12%" },
-        { key: "gender", name: "Gender", width: "12%" },
-        { key: "hairColor", name: "Hair Color", width: "12%" },
-        { key: "height", name: "Height", width: "12%" },
-        { key: "created", name: "Created", width: "12%" },
+        { key: "name", name: "Name" },
+        { key: "birthYear", name: "Birth Year" },
+        { key: "gender", name: "Gender" },
+        { key: "hairColor", name: "Hair Color" },
+        { key: "height", name: "Height" },
+        { key: "created", name: "Created" },
       ],
     };
   },

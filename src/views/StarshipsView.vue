@@ -3,8 +3,8 @@
     <Table
       :headers="headers"
       :data="$store.getters.getStarships"
-      page="starships"
-      caption="Starship"
+      routeName="starship"
+      caption="Starships"
     />
   </div>
 </template>
@@ -17,12 +17,12 @@ export default {
   data() {
     return {
       headers: [
-        { key: "name", name: "Name", width: "26%" },
-        { key: "model", name: "Model", width: "12%" },
-        { key: "class", name: "Class", width: "12%" },
-        { key: "passenger", name: "Passenger", width: "12%" },
-        { key: "length", name: "Length", width: "12%" },
-        { key: "character", name: "Character", width: "12%" },
+        { key: "name", name: "Name" },
+        { key: "model", name: "Model" },
+        { key: "class", name: "Class" },
+        { key: "passenger", name: "Passenger" },
+        { key: "length", name: "Length" },
+        { key: "character", name: "Character" },
       ],
     };
   },
