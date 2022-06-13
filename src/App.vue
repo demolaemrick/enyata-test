@@ -1,8 +1,8 @@
 <template>
   <div class="layout">
-    <RouterView name="Sidebar" :key="$route.fullPath"></RouterView>
+    <RouterView name="Sidebar" :key="$route.params"></RouterView>
     <div class="main">
-      <RouterView name="Navbar" :key="$route.fullPath"></RouterView>
+      <RouterView name="Navbar" :key="$route.params"></RouterView>
       <RouterView></RouterView>
     </div>
   </div>
