@@ -154,9 +154,11 @@ export default {
 }
 
 @media (max-width: 992px) {
-  .navbar__col-1,
   .navbar__col-2 {
     display: none;
+  }
+  .navbar__col-1{
+    justify-self: flex-end;
   }
 }
 @media (min-width: 993px) {

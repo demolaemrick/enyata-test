@@ -43,6 +43,7 @@ export default {
   methods: {
     navigate(id) {
       this.$router.push({ name: this.routeName, params: { id } });
+      this.$store.commit("hideSideMenu");
     },
   },
 };
@@ -82,12 +83,12 @@ th {
 }
 th,
 td {
-  padding: 30px;
+  padding: 25px;
   overflow-wrap: break-word;
 }
 td {
   color: #303b54;
-  line-height: 24px;
+  /* line-height: 24px; */
   text-align: center;
   font-weight: 500;
 }
@@ -99,6 +100,18 @@ td:not(:nth-child(7)) {
   display: none;
 }
 
+@media (max-width: 1266px) {
+  th,
+  td {
+    padding: 20px;
+  }
+}
+@media (max-width: 1079px) {
+  th,
+  td {
+    padding: 10px;
+  }
+}
 @media screen and (max-width: 992px) {
   table {
     border: none;
@@ -120,8 +133,7 @@ td:not(:nth-child(7)) {
   }
   table tr:hover {
     background: transparent;
-      box-shadow: 0px 0px 30px rgba(13, 47, 161, 0.07);
-
+    box-shadow: 0px 0px 30px rgba(13, 47, 161, 0.07);
   }
   table tbody tr td {
     text-align: right;
