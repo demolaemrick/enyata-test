@@ -35,9 +35,9 @@
         <Label for="password">Password</Label>
       </div>
       <div class="submit-btn">
-        <Button type="submit" :disabled="!isValid">Log in</Button>
+        <Button type="submit" :disabled="!isValid">Sign up</Button>
       </div>
-      <p>Forgot your password?</p>
+      <p>Account already exists?</p>
     </form>
     <!-- validation error message -->
     <template v-if="error">
