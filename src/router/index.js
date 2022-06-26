@@ -8,6 +8,11 @@ const routes = [
     component: LoginView,
   },
   {
+    path: "/signup",
+    name: "signup",
+    component: () => import("@/views/RegisterView.vue"),
+  },
+  {
     path: "/overview",
     name: "overview",
     components: {
